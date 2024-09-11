@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { usersAPI } from '../../store';
 
-export const UsersContainer: FC = () => {
+export const UsersList: FC = () => {
   const { data: users } = usersAPI.useFetchAllUsersQuery('');
 
   console.log(users);

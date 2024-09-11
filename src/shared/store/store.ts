@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { usersAPI } from '../../modules/UsersTable';
+import { usersAPI } from '../../modules/UsersContainer';
 
 export const store = configureStore({
   reducer: {

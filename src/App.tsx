@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { UsersContainer } from './modules/UsersTable';
+import { UsersList } from './modules/UsersContainer';
 
 export const App: FC = () => {
-  return <UsersContainer />;
+  return <UsersList />;
 };
