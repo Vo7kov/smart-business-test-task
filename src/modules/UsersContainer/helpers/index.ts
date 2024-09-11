@@ -1,0 +1,1 @@
+export { getFirstCapitalString } from './getFirstCapitalString';

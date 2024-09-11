@@ -1,26 +1,11 @@
 import { FC } from 'react';
+import { type User } from '../../types';
 
-import { usersAPI } from '../../store';
+type Props = {
+  users: User[];
+};
 
-import { Loader } from '../../../../ui/Loader';
-import { Error } from '../../../../ui/Error';
-
-export const UsersList: FC = () => {
-  const {
-    data: users,
-    isLoading,
-    isError,
-    refetch,
-  } = usersAPI.useFetchAllUsersQuery('');
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  if (isError) {
-    return <Error onRetry={refetch} />;
-  }
-
+export const UsersList: FC<Props> = ({ users }) => {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200">
@@ -34,24 +19,23 @@ export const UsersList: FC = () => {
         </thead>
 
         <tbody className="text-gray-900">
-          {users &&
-            users.map((user) => {
-              const { id, name, username, email, phone } = user;
+          {users.map((user) => {
+            const { id, name, username, email, phone } = user;
 
-              return (
-                <tr
-                  key={id}
-                  className={`border-b ${
-                    id % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                  }`}
-                >
-                  <td className="p-3">{name}</td>
-                  <td className="p-3">{username}</td>
-                  <td className="p-3">{email}</td>
-                  <td className="p-3">{phone}</td>
-                </tr>
-              );
-            })}
+            return (
+              <tr
+                key={id}
+                className={`border-b ${
+                  id % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+                }`}
+              >
+                <td className="p-3">{name}</td>
+                <td className="p-3">{username}</td>
+                <td className="p-3">{email}</td>
+                <td className="p-3">{phone}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

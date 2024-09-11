@@ -1,2 +1,3 @@
-export { UsersList } from './components/UsersList/UsersList';
-export { usersAPI } from './store';
+export { UsersManagement } from './components/UsersManagement/UsersManagement';
+
+export { usersAPI, usersFilterReducer, usersFilterActions } from './store';
