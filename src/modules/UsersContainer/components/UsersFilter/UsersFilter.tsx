@@ -1,13 +1,16 @@
 import { FC } from 'react';
-import { useAppDispatch, useAppSelector } from '@/shared/hooks/redux';
+import { useAppDispatch } from '@/shared/hooks/redux';
 
 import { usersFilterActions } from '../../store';
 import { type Inputs } from '../../types';
 
 import { getFirstCapitalString } from '../../helpers';
 
-export const UsersFilter: FC = () => {
-  const inputs = useAppSelector((state) => state.usersFilter);
+type Props = {
+  inputs: Inputs;
+};
+
+export const UsersFilter: FC<Props> = ({ inputs }) => {
   const dispatch = useAppDispatch();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

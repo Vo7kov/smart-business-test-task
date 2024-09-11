@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { useAppSelector } from '@/shared/hooks/redux';
 import { usersAPI } from '../../store';
 
 import { UsersList } from '../../components/UsersList/UsersList';
@@ -9,12 +10,14 @@ import { Loader } from '@/ui/Loader';
 import { Error } from '@/ui/Error';
 
 export const UsersManagement: FC = () => {
+  const inputs = useAppSelector((state) => state.usersFilter);
+
   const {
     data: users = [],
     isLoading,
     isError,
     refetch,
-  } = usersAPI.useFetchAllUsersQuery('');
+  } = usersAPI.useFetchAllUsersQuery(inputs);
 
   if (isLoading) {
     return <Loader />;
@@ -25,9 +28,9 @@ export const UsersManagement: FC = () => {
   }
 
   return (
-    <div className="flex gap-4 justify-center items-center h-dvh bg-blue-50">
+    <div className="flex gap-8 justify-center items-center h-dvh bg-blue-50 px-10">
       <UsersList users={users} />
-      <UsersFilter />
+      <UsersFilter inputs={inputs} />
     </div>
   );
 };

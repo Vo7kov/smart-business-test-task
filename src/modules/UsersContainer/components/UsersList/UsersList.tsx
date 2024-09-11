@@ -7,8 +7,8 @@ type Props = {
 
 export const UsersList: FC<Props> = ({ users }) => {
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border border-gray-200">
+    <div className="overflow-x-auto w-full">
+      <table className="bg-white border border-gray-200 w-full">
         <thead className="bg-gray-100 border-b-2 border-gray-200">
           <tr className="text-left text-gray-700 font-bold uppercase">
             <th className="p-3">Name</th>
@@ -19,6 +19,14 @@ export const UsersList: FC<Props> = ({ users }) => {
         </thead>
 
         <tbody className="text-gray-900">
+          {!users.length && (
+            <tr>
+              <td colSpan={4} className="p-3 text-center text-gray-500">
+                Nothing found matching your request
+              </td>
+            </tr>
+          )}
+
           {users.map((user) => {
             const { id, name, username, email, phone } = user;
 

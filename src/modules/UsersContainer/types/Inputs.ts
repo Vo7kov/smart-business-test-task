@@ -1,8 +1,5 @@
 export type Inputs = {
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
+  [key: string]: string;
 };
 
 export type InputChange = {
