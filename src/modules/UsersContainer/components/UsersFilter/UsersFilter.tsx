@@ -20,7 +20,7 @@ export const UsersFilter: FC<Props> = ({ inputs }) => {
       usersFilterActions.handleInputChange({
         name: name as keyof Inputs,
         value,
-      })
+      }),
     );
   };
 

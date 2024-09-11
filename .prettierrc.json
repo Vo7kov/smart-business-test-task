@@ -6,6 +6,5 @@
   "useTabs": false,
   "bracketSpacing": true,
   "bracketSameLine": false,
-  "printWidth": 80,
-  "importOrderSeparation": true
+  "printWidth": 80
 }

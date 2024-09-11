@@ -23,5 +23,5 @@ export default tseslint.config(
       quotes: ['error', 'single'],
       semi: ['error', 'always'],
     },
-  }
+  },
 );
