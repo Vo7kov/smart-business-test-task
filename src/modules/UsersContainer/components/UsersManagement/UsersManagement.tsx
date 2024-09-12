@@ -28,7 +28,7 @@ export const UsersManagement: FC = () => {
   }
 
   return (
-    <div className="flex gap-8 justify-center items-center h-dvh bg-blue-50 px-10 py-52">
+    <div className="grid grid-cols-[3fr_1fr] items-center gap-8 h-dvh bg-blue-50 px-10 py-52">
       <UsersList users={users} />
       <UsersFilter inputs={inputs} />
     </div>

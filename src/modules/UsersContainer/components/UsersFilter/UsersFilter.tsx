@@ -30,7 +30,7 @@ export const UsersFilter: FC<Props> = ({ inputs }) => {
   const handleClearAll = () => dispatch(usersFilterActions.handleClearAll());
 
   return (
-    <div className="p-4 bg-white border border-gray-200 rounded-md">
+    <div className="p-4 bg-white border border-gray-200 rounded-md h-min">
       <form className="grid grid-cols-1 gap-4">
         {Object.keys(inputs).map((name) => {
           const value = inputs[name as keyof Inputs];
